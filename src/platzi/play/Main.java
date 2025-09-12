@@ -2,6 +2,9 @@ package platzi.play;
 import platzi.play.contenido.Pelicula;
 import platzi.play.Platform.User;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Scanner;
 
 public class Main {
@@ -15,6 +18,7 @@ public class Main {
         pelicula.year = "2014";
         pelicula.isAvailable = true;
         pelicula.setRating(2.6);
+        pelicula.releaseDate = LocalDate.of(2014, 11, 7);
 
         System.out.println(pelicula.getInfo());
         pelicula.play();
@@ -27,9 +31,10 @@ public class Main {
         User user = new User();
         user.name = "John Doe";
         user.email = "test@test.com";
+        user.registrationDate = LocalDateTime.of( 2020, 5, 20, 15, 30, 45);
 
         user.view(pelicula);
-
+        System.out.println(user.registrationDate);
 
         /*Scanner scanner = new Scanner(System.in); // revisar que esta ingresando por la consola
         System.out.print("Enter your name: ");

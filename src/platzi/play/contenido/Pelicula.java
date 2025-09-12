@@ -1,5 +1,7 @@
 package platzi.play.contenido;
 
+import java.time.LocalDate;
+
 public class Pelicula {
 
     //Attributes
@@ -9,6 +11,8 @@ public class Pelicula {
     public String year;
     public double rating;
     public boolean isAvailable;
+    public LocalDate releaseDate;
+
 
     //Methods without parameters
     public void play() {
@@ -16,7 +20,7 @@ public class Pelicula {
     }
 
     public String getInfo() {
-        return "Title: " + title + "\nDescription: " + description + "\nDuration: " + duration + " minutes\nYear: " + year + "\nRating: " + rating + "\nAvailable: " + isAvailable;
+        return "Title: " + title + "\nDescription: " + description + "\nDuration: " + duration + " minutes\nYear: " + year + "\nRating: " + rating + "\nAvailable: " + isAvailable + "\nRelease Date: " + releaseDate.getYear();
     }
 
     //with parameters
