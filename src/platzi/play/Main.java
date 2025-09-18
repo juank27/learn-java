@@ -1,6 +1,7 @@
 package platzi.play;
 import platzi.play.contenido.Pelicula;
 import platzi.play.Platform.User;
+import platzi.play.utils.ScannerUtils;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -8,8 +9,26 @@ import java.time.LocalTime;
 import java.util.Scanner;
 
 public class Main {
+
+    public static final String VERSION = "1.0.0"; //constante
+
+
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        System.out.println("Hello world! " + VERSION);
+
+        //static method
+        String name = ScannerUtils.captureText("Enter your name" ); //funcion estatica
+        System.out.println("Hello, " + name + "!");
+
+        //instance method
+        ScannerUtils scannerUtils = new ScannerUtils();
+        int age = scannerUtils.captureInt("Enter your age");
+        System.out.println("You are " + age + " years old.");
+
+        double height = scannerUtils.captureDouble("Enter your height in meters");
+        System.out.println("You are " + height + " meters tall.");
+
+
 
         Pelicula pelicula = new Pelicula(); //instancia de un objeto
         pelicula.title = "Interstellar";
@@ -44,6 +63,14 @@ public class Main {
         System.out.println("Enter your age: ");
         int age = scanner.nextInt(); //nextInt captura un entero
         System.out.println("You are " + age + " years old.");*/
+
+        //casting implicito
+        long durationLong = pelicula.duration; //int a long
+
+        //casting explicito
+        int ratingInt = (int) pelicula.rating; //double a int
+
+        long numeroDePremios = Long.parseLong("123456789"); //String a long
 
 
     }
